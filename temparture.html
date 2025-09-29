@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature convertor</title>
+  </head>
+  <body>
+    <h1>Celsius/Fahrenheit Temperature Convertor</h1>
+    <input type="radio" id="C" name="tempScale" value="C" />
+    <label>Convert °C to °F</label>
+    <br />
+    <input type="radio" id="F" name="tempScale" value="F" />
+    <label>Convert °F to °C</label>
+    <br />
+    <br />
+    <label>Input the temperature value: </label>
+    <input id="tempInput" name="tempInput" />
+    <input type="submit" value="convert" id="convertBtn" />
+    <p id="resultOutput"></p>
+  </body>
+</html>
+
+<script>
+  const convertButton = document.getElementById("convertBtn");
+  convertButton.addEventListener("click", function () {
+    const temperature = document.getElementById("tempInput").value;
+    const selectedScale = document.querySelector(
+      "input[name=tempScale]:checked"
+    );
+    if (typeof)
+    if (selectedScale) {
+      let convertedTemp =
+        selectedScale.value === C
+          ? temperature * (9 / 5) + 32
+          : (temperature - 32) * (9 / 5);
+      result = `The converted value is ${convertedTemp}`;
+      const outputElement = document.getElementById("resultOutput");
+      outputElement.textContent = result;
+    } else {
+      alert("Please select a temperature scale (C or F).");
+    }
+  });
+</script>

@@ -8,6 +8,12 @@ while (count <= 10) {
 //console.log(total);
 
 // Chapter 3 Closures
+/* 
+Closures are nested functions, bindings are private and cannot
+be accessed outside the closure. Similar to an object,
+they encapsulate methods and values, saves
+their own lexical environment (parent scope) in memory. 
+ */
 const makeCounter = () => {
   let count = 0;
   return function () {
@@ -16,9 +22,28 @@ const makeCounter = () => {
   };
 };
 
-counter1 = makeCounter();
-counter2 = makeCounter();
+// FizzBuzzBazz with closure
+const FIZZBUZZBAZZ_RULES = {
+  3: "Fizz",
+  5: "Buzz",
+  7: "Bazz",
+};
+const makeFizzBuzzBazz = (rules) => {
+  const checkNumber = (n) => {
+    let result = "";
+    for (const divisor in rules) {
+      if (n % divisor === 0) {
+        result += rules[divisor];
+      }
+    }
+    return result || n;
+  };
+  return (printFizzBuzzBazz = (limit) => {
+    for (let i = 1; i <= limit; i++) {
+      console.log(checkNumber(i));
+    }
+  });
+};
 
-console.log(counter1());
-console.log(counter1());
-console.log(counter2());
+const fizzBuzzBazz = makeFizzBuzzBazz(FIZZBUZZBAZZ_RULES);
+fizzBuzzBazz(10);

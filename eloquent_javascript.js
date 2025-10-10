@@ -45,5 +45,12 @@ const makeFizzBuzzBazz = (rules) => {
   });
 };
 
-const fizzBuzzBazz = makeFizzBuzzBazz(FIZZBUZZBAZZ_RULES);
-fizzBuzzBazz(10);
+//const fizzBuzzBazz = makeFizzBuzzBazz(FIZZBUZZBAZZ_RULES);
+//fizzBuzzBazz(10);
+
+const createCounter = () => {
+  let count = 0;
+  const increment = () => count++;
+  const getValue = () => count;
+  return { increment, getValue };
+};

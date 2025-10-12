@@ -54,3 +54,7 @@ const createCounter = () => {
   const getValue = () => count;
   return { increment, getValue };
 };
+
+//counter = createCounter();
+//counter.increment();
+//console.log(counter.getValue());

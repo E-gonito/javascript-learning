@@ -32,9 +32,9 @@
 
     if (selectedScale) {
       let convertedTemp =
-        selectedScale.value === C
-          ? temperature * (9 / 5) + 32
-          : (temperature - 32) * (9 / 5);
+        selectedScale.value === "C"
+          ? temperature * (9 / 5) + 32 //Celsius to Fahrenheit
+          : (temperature - 32) * (9 / 5); //Fahrenheit to Celsius
       result = `The converted value is ${convertedTemp}`;
       const outputElement = document.getElementById("resultOutput");
       outputElement.textContent = result;

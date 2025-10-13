@@ -58,3 +58,37 @@ const createCounter = () => {
 //counter = createCounter();
 //counter.increment();
 //console.log(counter.getValue());
+
+const dog = {
+  size: 10,
+  legs: 4,
+  bark: () => {
+    return console.log("Bark!");
+  },
+};
+dog.weight = 25;
+dog["colour"] = "black"; // Can evaluate expressions like index in a loop
+//console.log(dog);
+
+/*
+try {
+  let a = b;
+} catch (err) {
+  let errorName = err.name;
+  let errorMessage = err.message;
+  let errorStack = err.stack;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed.");
+  }
+  return a / b;
+}
+
+try {
+  console.log(divide(5, 0));
+} catch (error) {
+  console.error(error.message); // Division by zero is not allowed.
+}
+*/

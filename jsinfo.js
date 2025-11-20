@@ -52,3 +52,17 @@ menu = {
   height: 600,
   title: "My menu",
 };
+
+// Arrays
+let fruits = ["apple", "pear", "Strawberry"];
+
+// https://javascript.info/object-copy Task 1
+
+const camelize = (str) => {
+  return str
+    .split("-")
+    .map((word, index) =>
+      index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join("");
+};

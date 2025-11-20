@@ -3,3 +3,11 @@ node_modules/
 .DS_Store
 dist/
 coverage/
+# Ignore personal VS Code settings
+.vscode/*
+
+# But keep shared project configuration
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json

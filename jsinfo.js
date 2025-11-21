@@ -73,3 +73,14 @@ const camelize = (str) => {
     )
     .join("");
 };
+
+const getMaxSubSum = (arr) => {
+  maxSubSum = 0;
+  currentSubSum = 0;
+  for (let num of arr) {
+    currentSubSum += num;
+    maxSubSum = Math.max(maxSubSum, currentSubSum);
+    if (currentSubSum < 0) currentSubSum = 0;
+  }
+  return maxSubSum;
+};

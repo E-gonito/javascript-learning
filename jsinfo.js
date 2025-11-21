@@ -84,3 +84,59 @@ const getMaxSubSum = (arr) => {
   }
   return maxSubSum;
 };
+
+const filterRange = (arr, a, b) => {
+  return arr.filter((num) => num >= a || num <= b);
+};
+
+const filterRangeInPlace = (arr, a, b) => {
+  for (let i = 0; i <= arr.length; i++) {
+    if (!(arr[i] >= a && arr[i] <= b)) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+};
+
+const sortDesc = (arr) => {
+  return arr.sort((a, b) => b - a);
+};
+
+const copySorted = (arr) => {
+  let sortedArr = arr;
+  return sortedArr.slice().sort();
+};
+
+const Calculator = () => {
+  let operations = { "+": (a, b) => a + b, "-": (a, b) => a - b };
+  const methods = {
+    calculate: (calculation) => {
+      const arrCalc = calculation.split(" ");
+      const a = Number(arrCalc[0]);
+      const op = arrCalc[1];
+      const b = Number(arrCalc[2]);
+      const calcFunction = operations[op];
+      return calcFunction(a, b);
+    },
+    addMethod: (operator, method) => {
+      operations[operator] = method;
+      return;
+    },
+  };
+  return methods;
+};
+
+const convertObjToArr = (users) => {
+  namesArr = [];
+  for (let user of users) {
+    namesArr.push(user.name);
+  }
+  return namesArr;
+};
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [john, pete, mary];
+console.log(convertObjToArr(users));

@@ -127,16 +127,9 @@ const Calculator = () => {
 };
 
 const convertObjToArr = (users) => {
-  namesArr = [];
-  for (let user of users) {
-    namesArr.push(user.name);
-  }
-  return namesArr;
+  return users.map((user) => user.age);
 };
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
-
-let users = [john, pete, mary];
-console.log(convertObjToArr(users));
+const usersMapped = (users) => {
+  let usersMappedObj = [];
+};

@@ -141,4 +141,7 @@ const sortByAge = (users) => {
   return users.sort((a, b) => a.age - b.age);
 };
 
-const shuffle
+const shuffle = (arr) => {
+  return arr.sort((a, b) => Math.random() - 0.5);
+};
+

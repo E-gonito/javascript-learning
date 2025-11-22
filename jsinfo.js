@@ -131,5 +131,14 @@ const convertObjToArr = (users) => {
 };
 
 const usersMapped = (users) => {
-  let usersMappedObj = [];
+  return users.map((user) => ({
+    fullName: `${user.name} ${user.surname}`,
+    id: user.id,
+  }));
 };
+
+const sortByAge = (users) => {
+  return users.sort((a, b) => a.age - b.age);
+};
+
+const shuffle

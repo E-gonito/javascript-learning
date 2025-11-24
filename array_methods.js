@@ -35,6 +35,9 @@ const isAllAdults = users.every((user) => user.age >= 18);
 
 // Exercise 7
 // Transform users into sentences: "Name is Age years old"
+const userSentences = users.map(
+  (user) => `${user.name} is ${user.age} years old`
+);
 // Expected: ["Alice is 25 years old", "Bob is 30 years old", "Carol is 35 years old"]
 
 // Exercise 8

@@ -20,6 +20,7 @@ const sumOfAges = users.reduce((sum, user) => (sum += user.age), 0);
 
 // Exercise 4
 // Find user with id equal to 2
+const userWithID2 = users.find((user) => user.id === 2);
 // Expected: {id: 2, name: "Bob", age: 30}
 
 // Exercise 5

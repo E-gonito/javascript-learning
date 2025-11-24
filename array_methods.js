@@ -25,6 +25,7 @@ const userWithID2 = users.find((user) => user.id === 2);
 
 // Exercise 5
 // Check if any user is under 20 years old
+const isAnyUserUnder20 = users.some((user) => user.age < 20);
 // Expected: false
 
 // Exercise 6

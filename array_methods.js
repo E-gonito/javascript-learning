@@ -15,6 +15,7 @@ const adults = users.filter((user) => user.age > 28);
 
 // Exercise 3
 // Calculate sum of all ages
+const sumOfAges = users.reduce((sum, user) => (sum += user.age), 0);
 // Expected: 90
 
 // Exercise 4

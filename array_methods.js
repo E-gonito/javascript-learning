@@ -51,9 +51,13 @@ const numOfUsersOver30 = users.reduce(
 // Exercise 9
 // Group users by age bracket using reduce
 // Create object with two properties: under30 (array), over30 (array)
-userAgeGroups = { under30: [], over30: [] };
-userAgeGroups.under30 = users.filter((user) => user.age < 30);
-userAgeGroups.over30 = users.filter((user) => user.age >= 30);
+userAgeGroups = users.reduce(
+  (groups, user) => {
+    (user.age >= 30 ? groups.over30 : groups.under30).push(user);
+    return groups;
+  },
+  { under30: [], over30: [] }
+);
 // Expected: {under30: [{id: 1, name: "Alice", age: 25}], over30: [{id: 2, name: "Bob", age: 30}, {id: 3, name: "Carol", age: 35}]}
 
 // Exercise 10

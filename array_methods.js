@@ -58,4 +58,8 @@ userAgeGroups.over30 = users.filter((user) => user.age >= 30);
 
 // Exercise 10
 // Chain operations: get names of users over 28, sorted alphabetically
+const userNamesOver30 = users
+  .filter((user) => user.age > 28)
+  .map((user) => user.name)
+  .sort();
 // Expected: ["Bob", "Carol"]

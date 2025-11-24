@@ -10,6 +10,7 @@ const names = users.map((user) => user.name);
 
 // Exercise 2
 // Filter users with age greater than 28
+const adults = users.filter((user) => user.age > 28);
 // Expected: [{id: 2, name: "Bob", age: 30}, {id: 3, name: "Carol", age: 35}]
 
 // Exercise 3

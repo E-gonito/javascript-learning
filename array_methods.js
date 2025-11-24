@@ -42,6 +42,10 @@ const userSentences = users.map(
 
 // Exercise 8
 // Count users over 30 using reduce
+const numOfUsersOver30 = users.reduce(
+  (count, user) => (user.age > 30 ? count + 1 : count),
+  0
+);
 // Expected: 1
 
 // Exercise 9

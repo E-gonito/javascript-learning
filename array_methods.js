@@ -30,6 +30,7 @@ const isAnyUserUnder20 = users.some((user) => user.age < 20);
 
 // Exercise 6
 // Check if all users are adults (age >= 18)
+const isAllAdults = users.every((user) => user.age >= 18);
 // Expected: true
 
 // Exercise 7

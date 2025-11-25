@@ -3,6 +3,7 @@
 const user = {
   name: "John",
   surname: "Smith",
+  years: 40,
 };
 user.name = "Pete";
 delete user.name;
@@ -56,3 +57,7 @@ man2.price = 100; // console.log(man.price) = 100
 man2 === man; // True, both reference same object
 const man3 = Object.assign({}, man); //Shallow copy
 const man4 = structuredClone(man); //Deep copy, but not for functions
+
+//https://javascript.info/destructuring-assignment
+// Exercise 1
+const { name, surname, years: age, isAdmin = false } = user;

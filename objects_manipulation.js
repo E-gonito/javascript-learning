@@ -86,4 +86,8 @@ const sumSalarys = (salaries) => {
   return sum;
 };
 
+// Exercise 2
+const countProps = (obj) => {
+  return Object.keys(obj).length;
+};
 

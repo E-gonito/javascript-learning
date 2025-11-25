@@ -1,3 +1,4 @@
+// https://javascript.info/object
 //Exercise 1: Hello, object
 const user = {
   name: "John",
@@ -14,3 +15,17 @@ const isEmpty = (obj) => {
   return true;
 };
 
+// Exercise 3: SUm object properties
+const salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+
+const sumSalaries = (salaries) => {
+  let sum = 0;
+  for (let salary in salaries) {
+    sum += salaries[salary];
+  }
+  return sum;
+};

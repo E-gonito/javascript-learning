@@ -61,3 +61,17 @@ const man4 = structuredClone(man); //Deep copy, but not for functions
 //https://javascript.info/destructuring-assignment
 // Exercise 1
 const { name, surname, years: age, isAdmin = false } = user;
+
+// Exercise 2
+salaries2 = salaries;
+const topSalary = (salaries) => {
+  let maxSalary = 0;
+  let maxName = null;
+  for (let [name, salary] of Object.entries(salaries)) {
+    if (salary > maxSalary) {
+      maxSalary = salary;
+      maxName = name;
+    }
+  }
+  return maxName;
+};

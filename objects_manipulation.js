@@ -15,17 +15,31 @@ const isEmpty = (obj) => {
   return true;
 };
 
-// Exercise 3: SUm object properties
+// Exercise 3: Sum object properties
 const salaries = {
   John: 100,
   Ann: 160,
   Pete: 130,
 };
-
 const sumSalaries = (salaries) => {
   let sum = 0;
   for (let salary in salaries) {
     sum += salaries[salary];
   }
   return sum;
+};
+
+// Exercise 4: multiplyNumeric
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
+
+const multiplyNumeric = (menu) => {
+  for (let key in menu) {
+    if (Number.isInteger(menu[key])) {
+      menu[key] *= 2;
+    }
+  }
 };

@@ -43,3 +43,16 @@ const multiplyNumeric = (menu) => {
     }
   }
 };
+
+//https://javascript.info/object-copy
+const man = {
+  name: "Man",
+  price: 200,
+  limbs: { arms: 2, legs: 2 },
+};
+man1 = man;
+man2 = man1;
+man2.price = 100; // console.log(man.price) = 100
+man2 === man; // True, both reference same object
+const man3 = Object.assign({}, man); //Shallow copy
+const man4 = structuredClone(man); //Deep copy, but not for functions

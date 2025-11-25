@@ -5,5 +5,12 @@ const user = {
 };
 user.name = "Pete";
 delete user.name;
-console.log(user);
+
+// Exercise 2: Check for emptiness
+const isEmpty = (obj) => {
+  for (let prop in obj) {
+    return false;
+  }
+  return true;
+};
 

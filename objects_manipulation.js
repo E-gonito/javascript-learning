@@ -75,3 +75,15 @@ const topSalary = (salaries) => {
   }
   return maxName;
 };
+
+// https://javascript.info/keys-values-entries
+// Exercise 1
+const sumSalarys = (salaries) => {
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+  return sum;
+};
+
+

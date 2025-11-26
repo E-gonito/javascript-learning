@@ -139,6 +139,12 @@ const product = {
 };
 // Create new object excluding properties with null or undefined values
 // Use Object.entries(), filter, and Object.fromEntries()
+const validProduct = Object.fromEntries(
+  Object.entries(product).filter(
+    ([property, value]) => value !== null ?? undefined
+  )
+);
+console.log(validProduct);
 // Expected: { id: 1, name: "Widget", price: 0, inStock: true }
 
 // Exercise 26: Invert object (swap keys and values)

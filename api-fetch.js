@@ -9,6 +9,7 @@ ID: 1
 Name: Chelsey Dietrich
 Email: Lucio_Hettinger@annie.ca
 City: McKenziehaven
+
 */
 
 async function getUserData() {
@@ -49,3 +50,10 @@ async function getUserData() {
 }
 
 getUserData();
+
+/* 
+Improvements:
+Error Handling (Added)
+Separation of Concerns
+Optional Chaining for undefined variables (Added)
+*/

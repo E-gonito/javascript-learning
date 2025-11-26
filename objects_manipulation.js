@@ -176,14 +176,12 @@ const transactions = [
 //   credit: [{ id: 2, type: "credit", amount: 200 }]
 // }
 const transactionInfo = transactions.reduce(
-  (transactionType, transaction) => {
-    (transaction.type === "debit"
-      ? transactionType.debit
-      : transactionType.credit
-    ).push(transaction);
-    return transactionType;
+  (transactionGroups, transaction) => {
+    (transactionGroups[transaction.type] =
+      transactionGroups[transaction.type] || []).push(transaction);
+    return transactionGroups;
   },
-  { debit: [], credit: [] }
+  {}
 );
 
 // Exercise 29: Pick specific properties from object

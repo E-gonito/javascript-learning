@@ -144,7 +144,6 @@ const validProduct = Object.fromEntries(
     ([property, value]) => value !== null ?? undefined
   )
 );
-console.log(validProduct);
 // Expected: { id: 1, name: "Widget", price: 0, inStock: true }
 
 // Exercise 26: Invert object (swap keys and values)
@@ -196,6 +195,8 @@ const userFull = {
 };
 // Create new object containing only id, name, and email (exclude password)
 // Use destructuring or Object.entries() with filter
+const { id, name: firstName, email } = userFull;
+const newUser = { id, firstName, email };
 // Expected: { id: 1, name: "Alice", email: "alice@example.com" }
 
 // Exercise 30: Check if object has all required properties
@@ -204,5 +205,8 @@ const user1 = { id: 1, name: "Alice", email: "alice@example.com" };
 const user2 = { id: 2, name: "Bob" };
 // Write function that returns true if object contains all required keys
 // Use Object.keys() or every()
+const hasRequiredKeys = (requiredKeys, user) => {
+  return requiredKeys.every((key) => key in user);
+};
 // Expected: hasRequiredKeys(user1, requiredKeys) === true
 // Expected: hasRequiredKeys(user2, requiredKeys) === false

@@ -161,6 +161,7 @@ const obj1 = { a: 1, b: 2 };
 const obj2 = { b: 3, c: 4 };
 const obj3 = { c: 5, d: 6 };
 // Combine all three objects (later objects override earlier)
+const mergedObject = { ...obj1, ...obj2, ...obj3 };
 // Expected: { a: 1, b: 3, c: 5, d: 6 }
 
 // Exercise 28: Group array of objects by property

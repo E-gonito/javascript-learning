@@ -100,7 +100,11 @@ const countConfigProps = (config) => {
 // Expected: 3
 
 // Exercise 22: Sum all numeric values in object
+const scores = { math: 90, science: 85, english: 92 };
 // Calculate total of all scores using Object.values() and reduce
+const scoreTotal = (scores) => {
+  return Object.values(scores).reduce((total, score) => total + score, 0);
+};
 // Expected: 267
 
 // Exercise 23: Transform object to array of formatted strings

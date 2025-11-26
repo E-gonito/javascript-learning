@@ -111,6 +111,10 @@ const scoreTotal = (scores) => {
 const inventory = { apples: 10, bananas: 5, oranges: 8 };
 // Convert to array of strings in format "item: quantity"
 // Use Object.entries()
+const convertToStrArray = (obj) => {
+  return Object.entries(obj);
+};
+console.log(convertToStrArray(inventory));
 // Expected: ["apples: 10", "bananas: 5", "oranges: 8"]
 
 // Exercise 24: Safely access deeply nested property

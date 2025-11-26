@@ -91,3 +91,90 @@ const countProps = (obj) => {
   return Object.keys(obj).length;
 };
 
+// Exercise 21: Count properties in object
+const config = { host: "localhost", port: 3000, timeout: 5000 };
+// Count number of properties using Object.keys()
+const countConfigProps = (config) => {
+  return Object.keys(config).length;
+};
+// Expected: 3
+
+// Exercise 22: Sum all numeric values in object
+// Calculate total of all scores using Object.values() and reduce
+// Expected: 267
+
+// Exercise 23: Transform object to array of formatted strings
+const inventory = { apples: 10, bananas: 5, oranges: 8 };
+// Convert to array of strings in format "item: quantity"
+// Use Object.entries()
+// Expected: ["apples: 10", "bananas: 5", "oranges: 8"]
+
+// Exercise 24: Safely access deeply nested property
+const data = {
+  user: {
+    profile: {
+      settings: null,
+    },
+  },
+};
+// Get data.user.profile.settings.theme without error
+// Use optional chaining with nullish coalescing to provide default "light"
+// Expected: "light"
+
+// Exercise 25: Filter object properties
+const product = {
+  id: 1,
+  name: "Widget",
+  price: 0,
+  inStock: true,
+  discount: null,
+};
+// Create new object excluding properties with null or undefined values
+// Use Object.entries(), filter, and Object.fromEntries()
+// Expected: { id: 1, name: "Widget", price: 0, inStock: true }
+
+// Exercise 26: Invert object (swap keys and values)
+const statusCodes = { ok: 200, notFound: 404, serverError: 500 };
+// Create new object where values become keys and keys become values
+// Use Object.entries() and Object.fromEntries()
+// Expected: { 200: "ok", 404: "notFound", 500: "serverError" }
+
+// Exercise 27: Merge multiple objects
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const obj3 = { c: 5, d: 6 };
+// Combine all three objects (later objects override earlier)
+// Expected: { a: 1, b: 3, c: 5, d: 6 }
+
+// Exercise 28: Group array of objects by property
+const transactions = [
+  { id: 1, type: "debit", amount: 100 },
+  { id: 2, type: "credit", amount: 200 },
+  { id: 3, type: "debit", amount: 50 },
+];
+// Group transactions by type property
+// Use reduce to build object with type as keys
+// Expected: {
+//   debit: [{ id: 1, type: "debit", amount: 100 }, { id: 3, type: "debit", amount: 50 }],
+//   credit: [{ id: 2, type: "credit", amount: 200 }]
+// }
+
+// Exercise 29: Pick specific properties from object
+const userFull = {
+  id: 1,
+  name: "Alice",
+  password: "secret",
+  email: "alice@example.com",
+};
+// Create new object containing only id, name, and email (exclude password)
+// Use destructuring or Object.entries() with filter
+// Expected: { id: 1, name: "Alice", email: "alice@example.com" }
+
+// Exercise 30: Check if object has all required properties
+const requiredKeys = ["id", "name", "email"];
+const user1 = { id: 1, name: "Alice", email: "alice@example.com" };
+const user2 = { id: 2, name: "Bob" };
+// Write function that returns true if object contains all required keys
+// Use Object.keys() or every()
+// Expected: hasRequiredKeys(user1, requiredKeys) === true
+// Expected: hasRequiredKeys(user2, requiredKeys) === false

@@ -141,7 +141,7 @@ const product = {
 // Use Object.entries(), filter, and Object.fromEntries()
 const validProduct = Object.fromEntries(
   Object.entries(product).filter(
-    ([property, value]) => value !== null ?? undefined
+    ([property, value]) => value !== null && value !== undefined
   )
 );
 // Expected: { id: 1, name: "Widget", price: 0, inStock: true }

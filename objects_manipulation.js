@@ -126,6 +126,7 @@ const data = {
 };
 // Get data.user.profile.settings.theme without error
 // Use optional chaining with nullish coalescing to provide default "light"
+const userLightSetting = data.user?.profile?.settings ?? "light";
 // Expected: "light"
 
 // Exercise 25: Filter object properties

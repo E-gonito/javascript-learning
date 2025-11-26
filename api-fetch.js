@@ -27,11 +27,12 @@ async function getUserData() {
         id,
         name,
         email,
-        city: address.city,
+        city: address?.city ?? "Unknown",
       }))
       .filter(
         (user) =>
-          user.city[0].toUpperCase() <= "M" && user.city[0].toUpperCase() >= "A"
+          user.city[0]?.toUpperCase() <= "M" &&
+          user.city[0].toUpperCase() >= "A"
       )
       .sort((a, b) => a.name.localeCompare(b.name));
 

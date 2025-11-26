@@ -151,6 +151,9 @@ console.log(validProduct);
 const statusCodes = { ok: 200, notFound: 404, serverError: 500 };
 // Create new object where values become keys and keys become values
 // Use Object.entries() and Object.fromEntries()
+const codesStatus = Object.fromEntries(
+  Object.entries(statusCodes).map(([status, code]) => [code, status])
+);
 // Expected: { 200: "ok", 404: "notFound", 500: "serverError" }
 
 // Exercise 27: Merge multiple objects

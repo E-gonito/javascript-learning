@@ -176,6 +176,16 @@ const transactions = [
 //   debit: [{ id: 1, type: "debit", amount: 100 }, { id: 3, type: "debit", amount: 50 }],
 //   credit: [{ id: 2, type: "credit", amount: 200 }]
 // }
+const transactionInfo = transactions.reduce(
+  (transactionType, transaction) => {
+    (transaction.type === "debit"
+      ? transactionType.debit
+      : transactionType.credit
+    ).push(transaction);
+    return transactionType;
+  },
+  { debit: [], credit: [] }
+);
 
 // Exercise 29: Pick specific properties from object
 const userFull = {

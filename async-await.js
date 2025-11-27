@@ -1,4 +1,5 @@
 // Promise based api fetching
+/*
 fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((response) => response.json())
   .then((user) => {
@@ -11,6 +12,7 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
   .then((posts) => {
     console.log(posts.length);
   });
+*/
 
 // Promises converted to async/await
 async function getUserPosts() {
@@ -32,7 +34,7 @@ async function getUserPosts() {
     console.error(`Oh no! Error: ${error}`);
   }
 }
-getUserPosts();
+//getUserPosts();
 
 // Parallel requests
 async function getThreeUsers() {
@@ -58,5 +60,5 @@ async function getThreeUsers() {
     console.error(`Error: ${error}`);
   }
 }
+//getThreeUsers();
 
-getThreeUsers();

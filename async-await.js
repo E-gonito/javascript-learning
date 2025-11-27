@@ -62,3 +62,77 @@ async function getThreeUsers() {
 }
 //getThreeUsers();
 
+// One rejects fails the rest, lose all results (fail-fast)
+async function testPromiseAll() {
+  try {
+    const results = await Promise.all([
+      Promise.resolve("Success 1"),
+      Promise.reject("Failed!"),
+      Promise.resolve("Success 3"),
+    ]);
+    console.log("Results:", results);
+  } catch (error) {
+    console.log("Caught:", error);
+  }
+}
+
+// using Promise.allSettled when you want all results with failures
+async function testPromiseAllSettled() {
+  const results = await Promise.allSettled([
+    Promise.resolve("Success 1"),
+    Promise.reject("Failed!"),
+    Promise.resolve("Success 3"),
+  ]);
+
+  console.log("Results:", results);
+
+  results.forEach((result, index) => {
+    if (result.status === "fulfilled") {
+      console.log(`Promise ${index}: Success -`, result.value);
+    } else {
+      console.log(`Promise ${index}: Failed -`, result.reason);
+    }
+  });
+}
+
+async function testPromiseRace() {
+  const result = await Promise.race([
+    new Promise((resolve) => setTimeout(() => resolve("Slow: 2s"), 2000)),
+    new Promise((resolve) => setTimeout(() => resolve("Fast: 500ms"), 500)),
+    new Promise((resolve) => setTimeout(() => resolve("Medium: 1s"), 1000)),
+  ]);
+
+  console.log("Winner:", result);
+}
+
+async function testPromiseRaceWithFailure() {
+  try {
+    const result = await Promise.race([
+      new Promise((_, reject) =>
+        setTimeout(() => reject("Fast fail: 200ms"), 200)
+      ),
+      new Promise((resolve) =>
+        setTimeout(() => resolve("Slow success: 1s"), 1000)
+      ),
+    ]);
+    console.log("Result:", result);
+  } catch (error) {
+    console.log("Caught:", error);
+  }
+}
+
+function fetchWithTimeout(url, timeoutMs) {
+  const fetchPromise = fetch(url);
+
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error("Request timed out")), timeoutMs);
+  });
+
+  return Promise.race([fetchPromise, timeoutPromise]);
+}
+
+// Test it
+fetchWithTimeout("https://jsonplaceholder.typicode.com/users/1", 1)
+  .then((response) => response.json())
+  .then((user) => console.log(user.name))
+  .catch((error) => console.log("Error:", error.message));
